@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "9ff0aaf1-577f-4af3-8981-16253298a8f0",
+		"name": "SecondTimeWithIssues",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetFromMyGitHub",
+			"item": [
+				{
+					"name": "GetAllIssuesFromMyGitHub",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.github.com/repos/NataliaVD/Postman/issues",
+							"protocol": "https",
+							"host": [
+								"api",
+								"github",
+								"com"
+							],
+							"path": [
+								"repos",
+								"NataliaVD",
+								"Postman",
+								"issues"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOneIssue",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.github.com/repos/NataliaVD/Postman/issues/1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"github",
+								"com"
+							],
+							"path": [
+								"repos",
+								"NataliaVD",
+								"Postman",
+								"issues",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PostIssueToMyGitHub",
+			"item": [
+				{
+					"name": "PostNewIssue",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "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",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "NataliaVD",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\" : \"Just to see if I remember\"}"
+						},
+						"url": {
+							"raw": "https://api.github.com/repos/{{user}}/{{repo}}/issues",
+							"protocol": "https",
+							"host": [
+								"api",
+								"github",
+								"com"
+							],
+							"path": [
+								"repos",
+								"{{user}}",
+								"{{repo}}",
+								"issues"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
